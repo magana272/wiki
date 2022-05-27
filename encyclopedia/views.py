@@ -36,5 +36,8 @@ def page(request, page):
                 "page": "Page wasn't found",
                 "pageName" : "NOTFOUND"
             }) 
+def create_page_view(request):
+    return render(request,"encyclopedia/create.html")
+
     
 

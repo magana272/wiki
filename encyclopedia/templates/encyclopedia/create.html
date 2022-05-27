@@ -1,0 +1,16 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block body %}
+<form method = "POST">
+    {% csrf_token %}
+    <input class="form-control" type="text" placeholder="Article Name" name = "pageName">
+    <div class="form-group">
+        <label>Article Information</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" name = "info"></textarea>
+    </div>
+    <div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    <div>
+
+</form>
+{% endblock%}
