@@ -7,7 +7,8 @@ from django.http import HttpResponse, HttpResponseRedirect, request
 from django.urls import reverse
 from . import util
 
-
+def to_index(request):
+    return HttpResponseRedirect(reverse('index'))
 def index(request):
     if request.method == "GET" and 'q' in request.GET:
         return HttpResponseRedirect(reverse("page",args=(request.GET.get('q', None),)))
