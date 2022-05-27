@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{pageName}}
+{% endblock %}
+
+{% block body %}
+{% if not_found %}
+{}
+{% endif %}
+    {%if page %}
+    <div>
+        {{page | safe}}
+    </div>
+    {%endif%}
+
+{% endblock %}
