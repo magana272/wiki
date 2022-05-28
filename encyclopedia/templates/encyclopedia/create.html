@@ -1,7 +1,7 @@
 {% extends 'encyclopedia/layout.html' %}
 
 {% block body %}
-<form method = "POST">
+<form action = {%url 'index'%} method = "POST">
     {% csrf_token %}
     <input class="form-control" type="text" placeholder="Article Name" name = "pageName">
     <div class="form-group">
