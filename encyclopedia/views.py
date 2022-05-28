@@ -42,6 +42,9 @@ def page(request, page):
             }) 
 def create_page_view(request):
     return render(request,"encyclopedia/create.html")
+def edit_page_view(request, pageName):
+    entry = util.get_entry(pageName)
+    return render(request,"encyclopedia/edit.html", {"pageName":pageName,"page":entry})
 
     
 

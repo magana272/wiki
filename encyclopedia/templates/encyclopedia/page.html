@@ -6,12 +6,13 @@
 
 {% block body %}
 {% if not_found %}
-{}
 {% endif %}
     {%if page %}
     <div>
         {{page | safe}}
     </div>
     {%endif%}
-
+    <form action= "{%url 'edit' pageName%}"}>
+    <button type = "submit" onclick= "location.href ='{%url 'edit' pageName%}"> Edit </button>
+    <form>
 {% endblock %}
