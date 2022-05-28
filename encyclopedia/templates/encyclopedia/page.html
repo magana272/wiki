@@ -6,13 +6,15 @@
 
 {% block body %}
 {% if not_found %}
-{% endif %}
-    {%if page %}
+ <h1> Page Not Found</h1>
+{% else %}
     <div>
         {{page | safe}}
     </div>
-    {%endif%}
-    <form action= "{%url 'edit' pageName%}"}>
-    <button type = "submit" onclick= "location.href ='{%url 'edit' pageName%}"> Edit </button>
+    {%if pageName != 'Manuel Magana' %}
+    <form action= "{%url 'edit' pageName%}">
+        <button type = "submit" onclick= "location.href ='{%url 'edit' pageName%}"> Edit </button>
     <form>
+    {% endif %}
+ {% endif %}
 {% endblock %}

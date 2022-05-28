@@ -8,14 +8,15 @@
 <h1> Edit {{pageName}}: </h1>
 <div class="form-group">
     <label>Article Information</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" name = "info">{{page}}</textarea>
+    
 </div>
-<div class="btn-group" role="group" aria-label="Basic example">
-<form action={%url 'page' pageName%} name ="submit" method = "POST">
-    <input type = "button" value = "Submit">
-</form>
-<form action={%url 'page' pageName%} name ="submit" method = "GET">
-    <input type = "button" value = "Cancel">
-</form>
 
+<form action= "{%url 'page' pageName%}" method = 'POST'>
+    {% csrf_token %}
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" name = "info">{{page}}</textarea>
+    <button type = "submit" onclick= "location.href ='{%url 'page' pageName%}">Submit</button>
+<form>
+ <form action= "{%url 'page' pageName%}">
+        <button type = "submit" onclick= "location.href ='{%url 'page' pageName%}">Cancel</button>
+ <form>
 {% endblock %}
